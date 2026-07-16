@@ -1,0 +1,505 @@
+{
+  "status": "passed",
+  "resolvedAbsoluteFilePath": "C:\\Users\\za991\\Documents\\New project\\award-factory\\award-factory-seed.xlsx",
+  "sourceFileName": "award-factory-seed.xlsx",
+  "fileSize": 126352,
+  "inputSha256": "f692d2a130b3963d4c58a9269f35c0232b891d3c200ba5db0f3753c0d7736952",
+  "finalInputSha256": "f692d2a130b3963d4c58a9269f35c0232b891d3c200ba5db0f3753c0d7736952",
+  "acceptanceDatabaseIdentifier": "C:\\Users\\za991\\Documents\\New project\\award-factory\\test-temp\\acceptance-db.in-memory.json",
+  "isolatedFromDevelopmentAndProduction": true,
+  "workbookSheetNames": [
+    "Dashboard",
+    "Opportunity Radar",
+    "Project Profiles",
+    "Submission Kit",
+    "Weekly Workflow",
+    "Sources & Rules",
+    "Settings"
+  ],
+  "selectedSourceSheet": "Opportunity Radar",
+  "previewCounts": {
+    "create": 23,
+    "update": 0,
+    "skip": 0,
+    "error": 0
+  },
+  "firstApplyCounts": {
+    "create": 23,
+    "update": 0,
+    "skip": 0,
+    "error": 0
+  },
+  "identicalSecondApplyCounts": {
+    "create": 0,
+    "update": 0,
+    "skip": 23,
+    "error": 0
+  },
+  "modifiedRowApplyCounts": {
+    "create": 0,
+    "update": 1,
+    "skip": 22,
+    "error": 0
+  },
+  "invalidRowTestCounts": {
+    "create": 0,
+    "update": 0,
+    "skip": 23,
+    "error": 1
+  },
+  "finalOpportunityCount": 23,
+  "importJobHistory": [
+    {
+      "id": "import-1783814400000-preview",
+      "sourceFileName": "award-factory-seed.xlsx",
+      "mode": "preview",
+      "createdAt": "2026-07-12T00:00:00.000Z",
+      "completedAt": "2026-07-12T00:00:00.000Z",
+      "status": "completed",
+      "createCount": 23,
+      "updateCount": 0,
+      "skipCount": 0,
+      "errorCount": 0
+    },
+    {
+      "id": "import-1783814460000-apply",
+      "sourceFileName": "award-factory-seed.xlsx",
+      "mode": "apply",
+      "createdAt": "2026-07-12T00:01:00.000Z",
+      "completedAt": "2026-07-12T00:01:00.000Z",
+      "status": "completed",
+      "createCount": 23,
+      "updateCount": 0,
+      "skipCount": 0,
+      "errorCount": 0
+    },
+    {
+      "id": "import-1783814520000-apply",
+      "sourceFileName": "award-factory-seed.xlsx",
+      "mode": "apply",
+      "createdAt": "2026-07-12T00:02:00.000Z",
+      "completedAt": "2026-07-12T00:02:00.000Z",
+      "status": "completed",
+      "createCount": 0,
+      "updateCount": 0,
+      "skipCount": 23,
+      "errorCount": 0
+    },
+    {
+      "id": "import-1783814580000-apply",
+      "sourceFileName": "award-factory-seed.modified.xlsx",
+      "mode": "apply",
+      "createdAt": "2026-07-12T00:03:00.000Z",
+      "completedAt": "2026-07-12T00:03:00.000Z",
+      "status": "completed",
+      "createCount": 0,
+      "updateCount": 1,
+      "skipCount": 22,
+      "errorCount": 0
+    },
+    {
+      "id": "import-1783814640000-apply",
+      "sourceFileName": "award-factory-seed.invalid.xlsx",
+      "mode": "apply",
+      "createdAt": "2026-07-12T00:04:00.000Z",
+      "completedAt": "2026-07-12T00:04:00.000Z",
+      "status": "completed",
+      "createCount": 0,
+      "updateCount": 0,
+      "skipCount": 23,
+      "errorCount": 1
+    }
+  ],
+  "rowLevelErrors": [
+    {
+      "rowNumber": 25,
+      "row": {
+        "id": "AF-999",
+        "name": "Acceptance Invalid Row",
+        "sourceUrl": "not-a-valid-url",
+        "finalDeadline": "not-a-date",
+        "deadline": "not-a-date"
+      },
+      "reason": "sourceUrl: Invalid url",
+      "opportunityId": "AF-999",
+      "fieldName": "sourceUrl",
+      "rawValue": "not-a-valid-url"
+    }
+  ],
+  "assertions": [
+    {
+      "id": "META-1",
+      "name": "input file SHA-256",
+      "expected": "f692d2a130b3963d4c58a9269f35c0232b891d3c200ba5db0f3753c0d7736952",
+      "actual": "f692d2a130b3963d4c58a9269f35c0232b891d3c200ba5db0f3753c0d7736952",
+      "status": "PASS"
+    },
+    {
+      "id": "META-2",
+      "name": "input file size",
+      "expected": 126352,
+      "actual": 126352,
+      "status": "PASS"
+    },
+    {
+      "id": "META-3",
+      "name": "workbook sheet names",
+      "expected": [
+        "Dashboard",
+        "Opportunity Radar",
+        "Project Profiles",
+        "Submission Kit",
+        "Weekly Workflow",
+        "Sources & Rules",
+        "Settings"
+      ],
+      "actual": [
+        "Dashboard",
+        "Opportunity Radar",
+        "Project Profiles",
+        "Submission Kit",
+        "Weekly Workflow",
+        "Sources & Rules",
+        "Settings"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "META-4",
+      "name": "selected source sheet",
+      "expected": "Opportunity Radar",
+      "actual": "Opportunity Radar",
+      "status": "PASS"
+    },
+    {
+      "id": "META-5",
+      "name": "acceptance database is isolated",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "id": "META-6",
+      "name": "real opportunity rows after blank formatted rows ignored",
+      "expected": 23,
+      "actual": 23,
+      "status": "PASS"
+    },
+    {
+      "id": "META-7",
+      "name": "opportunity IDs AF-001 through AF-023",
+      "expected": [
+        "AF-001",
+        "AF-002",
+        "AF-003",
+        "AF-004",
+        "AF-005",
+        "AF-006",
+        "AF-007",
+        "AF-008",
+        "AF-009",
+        "AF-010",
+        "AF-011",
+        "AF-012",
+        "AF-013",
+        "AF-014",
+        "AF-015",
+        "AF-016",
+        "AF-017",
+        "AF-018",
+        "AF-019",
+        "AF-020",
+        "AF-021",
+        "AF-022",
+        "AF-023"
+      ],
+      "actual": [
+        "AF-001",
+        "AF-002",
+        "AF-003",
+        "AF-004",
+        "AF-005",
+        "AF-006",
+        "AF-007",
+        "AF-008",
+        "AF-009",
+        "AF-010",
+        "AF-011",
+        "AF-012",
+        "AF-013",
+        "AF-014",
+        "AF-015",
+        "AF-016",
+        "AF-017",
+        "AF-018",
+        "AF-019",
+        "AF-020",
+        "AF-021",
+        "AF-022",
+        "AF-023"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "A-1",
+      "name": "preview counts on empty database",
+      "expected": {
+        "create": 23,
+        "update": 0,
+        "skip": 0,
+        "error": 0
+      },
+      "actual": {
+        "create": 23,
+        "update": 0,
+        "skip": 0,
+        "error": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "A-2",
+      "name": "opportunity count before preview",
+      "expected": 0,
+      "actual": 0,
+      "status": "PASS"
+    },
+    {
+      "id": "A-3",
+      "name": "opportunity count after preview",
+      "expected": 0,
+      "actual": 0,
+      "status": "PASS"
+    },
+    {
+      "id": "B-1",
+      "name": "first apply counts",
+      "expected": {
+        "create": 23,
+        "update": 0,
+        "skip": 0,
+        "error": 0
+      },
+      "actual": {
+        "create": 23,
+        "update": 0,
+        "skip": 0,
+        "error": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "B-2",
+      "name": "first apply final opportunity count",
+      "expected": 23,
+      "actual": 23,
+      "status": "PASS"
+    },
+    {
+      "id": "B-3",
+      "name": "zero duplicates after first apply",
+      "expected": {
+        "duplicateIds": [],
+        "duplicateUrls": []
+      },
+      "actual": {
+        "duplicateIds": [],
+        "duplicateUrls": []
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "C-1",
+      "name": "identical second apply counts",
+      "expected": {
+        "create": 0,
+        "update": 0,
+        "skip": 23,
+        "error": 0
+      },
+      "actual": {
+        "create": 0,
+        "update": 0,
+        "skip": 23,
+        "error": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "C-2",
+      "name": "identical second apply final opportunity count",
+      "expected": 23,
+      "actual": 23,
+      "status": "PASS"
+    },
+    {
+      "id": "D-1",
+      "name": "modified-row apply counts",
+      "expected": {
+        "create": 0,
+        "update": 1,
+        "skip": 22,
+        "error": 0
+      },
+      "actual": {
+        "create": 0,
+        "update": 1,
+        "skip": 22,
+        "error": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "D-2",
+      "name": "modified-row final opportunity count",
+      "expected": 23,
+      "actual": 23,
+      "status": "PASS"
+    },
+    {
+      "id": "D-3",
+      "name": "only AF-001 changed",
+      "expected": [
+        "AF-001"
+      ],
+      "actual": [
+        "AF-001"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "D-4",
+      "name": "no status history for unchanged rows",
+      "expected": 0,
+      "actual": 0,
+      "status": "PASS"
+    },
+    {
+      "id": "D-5",
+      "name": "no activity records for unchanged rows",
+      "expected": 0,
+      "actual": 0,
+      "status": "PASS"
+    },
+    {
+      "id": "D-6",
+      "name": "modified Notes field persisted",
+      "expected": "acceptance-test-notes-1783994377581",
+      "actual": "acceptance-test-notes-1783994377581",
+      "status": "PASS"
+    },
+    {
+      "id": "E-1",
+      "name": "invalid-row apply counts",
+      "expected": {
+        "create": 0,
+        "update": 0,
+        "skip": 23,
+        "error": 1
+      },
+      "actual": {
+        "create": 0,
+        "update": 0,
+        "skip": 23,
+        "error": 1
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "E-2",
+      "name": "invalid-row final opportunity count",
+      "expected": 23,
+      "actual": 23,
+      "status": "PASS"
+    },
+    {
+      "id": "E-3",
+      "name": "invalid row was not inserted",
+      "expected": false,
+      "actual": false,
+      "status": "PASS"
+    },
+    {
+      "id": "E-4",
+      "name": "row-level error includes worksheet row number",
+      "expected": 25,
+      "actual": 25,
+      "status": "PASS"
+    },
+    {
+      "id": "E-5",
+      "name": "row-level error includes opportunity ID",
+      "expected": "AF-999",
+      "actual": "AF-999",
+      "status": "PASS"
+    },
+    {
+      "id": "E-6",
+      "name": "row-level error includes invalid field name",
+      "expected": "sourceUrl",
+      "actual": "sourceUrl",
+      "status": "PASS"
+    },
+    {
+      "id": "E-7",
+      "name": "row-level error includes raw invalid value",
+      "expected": "not-a-valid-url",
+      "actual": "not-a-valid-url",
+      "status": "PASS"
+    },
+    {
+      "id": "E-8",
+      "name": "row-level error has readable message",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "id": "E-9",
+      "name": "valid rows remain processable and count unchanged",
+      "expected": 23,
+      "actual": 23,
+      "status": "PASS"
+    },
+    {
+      "id": "F-1",
+      "name": "five import job records",
+      "expected": 5,
+      "actual": 5,
+      "status": "PASS"
+    },
+    {
+      "id": "F-2",
+      "name": "every import job has required history fields",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "id": "F-3",
+      "name": "job history modes",
+      "expected": [
+        "preview",
+        "apply",
+        "apply",
+        "apply",
+        "apply"
+      ],
+      "actual": [
+        "preview",
+        "apply",
+        "apply",
+        "apply",
+        "apply"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "META-8",
+      "name": "original workbook SHA-256 unchanged after tests",
+      "expected": "f692d2a130b3963d4c58a9269f35c0232b891d3c200ba5db0f3753c0d7736952",
+      "actual": "f692d2a130b3963d4c58a9269f35c0232b891d3c200ba5db0f3753c0d7736952",
+      "status": "PASS"
+    }
+  ]
+}
