@@ -148,9 +148,32 @@
       color: #6f4c12;
       font-weight: 700;
     }
+    .recording-strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 12px;
+      margin: 18px 0 22px;
+    }
+    .recording-strip div {
+      background: #ffffffb8;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 14px 16px;
+      font-weight: 800;
+      color: var(--accent-dark);
+    }
+    .integration {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 18px;
+    }
+    .integration .card {
+      min-height: 160px;
+    }
     .hidden { opacity: 0.32; filter: grayscale(0.4); }
     @media (max-width: 900px) {
-      header, .grid, .flow { grid-template-columns: 1fr; }
+      header, .grid, .flow, .recording-strip, .integration { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -180,6 +203,12 @@
       <span>Reply draft</span>
       <span>Follow-up task</span>
     </div>
+
+    <section class="recording-strip">
+      <div>1. Show messy enquiry</div>
+      <div>2. Click Run Autopilot</div>
+      <div>3. Explain human approval gate</div>
+    </section>
 
     <section class="grid">
       <article class="card hidden" data-step="01">
@@ -221,6 +250,27 @@
     <div class="footer-note">
       Safety boundary: this agent prepares drafts and tasks. It does not automatically send customer messages or make binding quotes.
     </div>
+
+    <section class="integration">
+      <article class="card">
+        <h2>Qwen integration</h2>
+        <ul>
+          <li>Extract structured job fields</li>
+          <li>Classify service type</li>
+          <li>Generate customer reply draft</li>
+          <li>Generate quote draft text</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h2>Alibaba Cloud path</h2>
+        <ul>
+          <li>Store job records</li>
+          <li>Store agent logs</li>
+          <li>Track follow-up tasks</li>
+          <li>Host the demo service later</li>
+        </ul>
+      </article>
+    </section>
   </main>
 
   <script>
