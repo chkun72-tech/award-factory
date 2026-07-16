@@ -78,7 +78,14 @@ Next steps:
 - React prototype
 - TypeScript
 
+## Track
+
+Track 4: Autopilot Agent
+
+## Repository and deployment note
+
+The repository should be public and open source before final submission. The final version must include Alibaba Cloud deployment proof as required by the hackathon rules.
+
 ## Safety / human approval note
 
 All customer-facing messages and quote drafts require human review before sending. The system is an assistant, not an autonomous contractor or legal pricing authority.
-

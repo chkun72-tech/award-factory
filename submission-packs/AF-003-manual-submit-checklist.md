@@ -11,6 +11,8 @@ Use this before submitting to Devpost.
 - [ ] Confirm whether demo video must be public or unlisted.
 - [ ] Confirm IP/licence terms allow later commercial use.
 - [ ] Confirm final deadline in Australia/Sydney time.
+- [ ] Confirm repository contains an open source license visible on GitHub.
+- [ ] Confirm Alibaba Cloud deployment proof is included.
 
 ## 2. Demo readiness
 
@@ -31,6 +33,8 @@ Use this before submitting to Devpost.
 - [ ] README explains problem, workflow, and demo.
 - [ ] No `.env` or secrets committed.
 - [ ] If required by rules, repo visibility is public before submission.
+- [ ] Repo includes `LICENSE`.
+- [ ] Repo includes a code file proving Alibaba Cloud service/API usage.
 - [ ] If public, no private customer data or credentials included.
 
 ## 4. Video readiness
@@ -55,6 +59,7 @@ Use this before submitting to Devpost.
 - [ ] What's next pasted.
 - [ ] Built with tags selected.
 - [ ] GitHub URL added.
+- [ ] Alibaba Cloud proof code URL added if Devpost asks for it.
 - [ ] Demo video URL added.
 - [ ] Screenshot uploaded.
 
@@ -65,6 +70,7 @@ Submit only if:
 - eligibility is confirmed,
 - demo works,
 - no secrets are exposed,
+- repo is public and open source if required,
+- Alibaba Cloud backend proof exists,
 - video and repo links are accessible,
 - human approval boundary is clear.
-
