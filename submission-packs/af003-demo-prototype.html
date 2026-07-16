@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Handyman Quote-to-Follow-up Autopilot</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f2ea;
+      --ink: #22201c;
+      --muted: #706a5f;
+      --card: #fffaf0;
+      --line: #e5d9c6;
+      --accent: #bd6f2f;
+      --accent-dark: #81461e;
+      --green: #1f7a4d;
+      --blue: #246b94;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: radial-gradient(circle at top left, #fff8e8, var(--bg) 38%, #e9f0ee);
+      color: var(--ink);
+    }
+    main {
+      width: min(1180px, calc(100vw - 40px));
+      margin: 0 auto;
+      padding: 36px 0 48px;
+    }
+    header {
+      display: grid;
+      grid-template-columns: 1.4fr 0.8fr;
+      gap: 24px;
+      align-items: end;
+      margin-bottom: 24px;
+    }
+    h1 {
+      font-size: clamp(34px, 5vw, 62px);
+      line-height: 0.95;
+      margin: 0 0 14px;
+      letter-spacing: -0.06em;
+    }
+    h2 { margin: 0 0 12px; font-size: 20px; }
+    p { color: var(--muted); line-height: 1.55; }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #1f7a4d14;
+      color: var(--green);
+      border: 1px solid #1f7a4d30;
+      font-weight: 700;
+      font-size: 13px;
+    }
+    .hero-card, .card {
+      background: color-mix(in srgb, var(--card) 92%, white);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: 0 20px 60px #62411d18;
+    }
+    .hero-card { padding: 22px; }
+    .message {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 18px;
+      font-size: 18px;
+      line-height: 1.45;
+    }
+    .toolbar {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+    button {
+      border: 0;
+      border-radius: 16px;
+      padding: 13px 18px;
+      background: var(--accent);
+      color: white;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 0 10px 24px #bd6f2f30;
+    }
+    button.secondary {
+      background: white;
+      color: var(--accent-dark);
+      border: 1px solid var(--line);
+      box-shadow: none;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 18px;
+    }
+    .card {
+      padding: 20px;
+      min-height: 210px;
+      position: relative;
+      overflow: hidden;
+    }
+    .card::after {
+      content: attr(data-step);
+      position: absolute;
+      right: 16px;
+      top: 12px;
+      font-size: 44px;
+      color: #bd6f2f14;
+      font-weight: 900;
+    }
+    ul { margin: 0; padding-left: 18px; color: var(--muted); line-height: 1.55; }
+    .output {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 14px;
+      color: #2e2a23;
+      line-height: 1.5;
+    }
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 10px;
+      margin: 22px 0;
+    }
+    .flow span {
+      padding: 14px 10px;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      text-align: center;
+      font-weight: 800;
+      color: var(--blue);
+      font-size: 13px;
+    }
+    .footer-note {
+      margin-top: 20px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: #fff4dc;
+      border: 1px solid #f0d6a6;
+      color: #6f4c12;
+      font-weight: 700;
+    }
+    .hidden { opacity: 0.32; filter: grayscale(0.4); }
+    @media (max-width: 900px) {
+      header, .grid, .flow { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <section>
+        <span class="badge">Qwen Cloud Hackathon Demo · Human approval required</span>
+        <h1>Handyman Quote-to-Follow-up Autopilot</h1>
+        <p>An AI agent workflow that turns messy customer repair enquiries into structured job scopes, quote drafts, customer replies, and follow-up tasks.</p>
+      </section>
+      <section class="hero-card">
+        <h2>Customer enquiry</h2>
+        <div class="message">Hi, my bathroom tap is leaking and I may also need a cabinet fixed. Can someone come this week? I am in Parramatta.</div>
+        <div class="toolbar">
+          <button id="run">Run Autopilot</button>
+          <button class="secondary" id="reset">Reset</button>
+        </div>
+      </section>
+    </header>
+
+    <div class="flow">
+      <span>Intake parser</span>
+      <span>Service classifier</span>
+      <span>Missing-info checker</span>
+      <span>Quote draft</span>
+      <span>Reply draft</span>
+      <span>Follow-up task</span>
+    </div>
+
+    <section class="grid">
+      <article class="card hidden" data-step="01">
+        <h2>Structured job scope</h2>
+        <ul>
+          <li>Service: plumbing + general handyman</li>
+          <li>Location: Parramatta</li>
+          <li>Urgency: medium; may become urgent if leak is active</li>
+          <li>Visit window: this week</li>
+        </ul>
+      </article>
+      <article class="card hidden" data-step="02">
+        <h2>Missing information</h2>
+        <ul>
+          <li>Photo/video of tap leak</li>
+          <li>Leak severity and whether water can be isolated</li>
+          <li>Cabinet issue details and photos</li>
+          <li>Preferred access times</li>
+        </ul>
+      </article>
+      <article class="card hidden" data-step="03">
+        <h2>Owner next action</h2>
+        <div class="output">Ask for photos, confirm whether the leak is active, then offer an inspection window before sending a final quote.</div>
+      </article>
+      <article class="card hidden" data-step="04">
+        <h2>Quote draft</h2>
+        <div class="output">Draft only: call-out / inspection plus repair estimate. Final pricing depends on photos, parts, access, and site inspection.</div>
+      </article>
+      <article class="card hidden" data-step="05">
+        <h2>Customer reply draft</h2>
+        <div class="output">Thanks for reaching out. Could you please send a photo or short video of the leaking tap and the cabinet issue? Also let us know your preferred time this week and whether the leak is still active.</div>
+      </article>
+      <article class="card hidden" data-step="06">
+        <h2>Follow-up task</h2>
+        <div class="output">Follow up in 24 hours if no photos are received. Owner approval required before sending quote or customer message.</div>
+      </article>
+    </section>
+
+    <div class="footer-note">
+      Safety boundary: this agent prepares drafts and tasks. It does not automatically send customer messages or make binding quotes.
+    </div>
+  </main>
+
+  <script>
+    const cards = [...document.querySelectorAll(".card")];
+    const run = document.querySelector("#run");
+    const reset = document.querySelector("#reset");
+    run.addEventListener("click", () => {
+      cards.forEach((card, index) => {
+        setTimeout(() => card.classList.remove("hidden"), index * 280);
+      });
+    });
+    reset.addEventListener("click", () => cards.forEach((card) => card.classList.add("hidden")));
+  </script>
+</body>
+</html>
